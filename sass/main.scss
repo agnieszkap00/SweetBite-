@@ -1,0 +1,148 @@
+@use './colors' as colors;
+@use './animations' as animation;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: colors.$light-meringue;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+//NAV
+
+nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 40px;
+	background-color: colors.$light-meringue;
+	z-index: 1000;
+
+	.nav_item {
+		padding: 10px;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: colors.$violet;
+		cursor: pointer;
+	}
+
+	.nav-mobile {
+		transform: translateX(100%);
+	}
+	.nav-active {
+		height: 100vh;
+		width: 100%;
+		padding: 40px;
+		text-align: center;
+		transform: translateX(0);
+		transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+		background-color: colors.$light-meringue;
+		z-index: 1000;
+	}
+
+	.burger-icon {
+		position: absolute;
+		top: 0;
+		right: 20px;
+		width: 40px;
+		height: 40px;
+		padding: 5px 10px;
+		font-size: 20px;
+		background: none;
+		border: none;
+		text-decoration: none;
+	}
+
+	.nav-desktop {
+		display: none;
+	}
+
+	.burger-icon,
+	.nav-mobile {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+//HEADER
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+
+	.header-heading {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background-image: url(../img/macaroons-small.jpg);
+		background-position: center;
+		background-size: cover;
+		z-index: 0;
+	}
+
+	.header-text {
+		color: colors.$light-meringue;
+		z-index: 10;
+	}
+
+	.header-bc {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+	.fa-solid
+	 {
+		color: colors.$violet;
+	}
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+	nav {
+		.burger-icon,
+		.nav-mobile {
+			display: none;
+		}
+
+		.nav-desktop {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+
+			a:hover {
+				color: colors.$pink-color-hover;
+			}
+		}
+	}
+
+	.header-heading {
+		background-image: url(../img/macaroons-big.jpg);
+	}
+}

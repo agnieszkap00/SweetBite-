@@ -1,0 +1,123 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #FFF2F2;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #FFF2F2;
+  z-index: 1000;
+}
+nav .nav_item {
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #5c2e85;
+  cursor: pointer;
+}
+nav .nav-mobile {
+  transform: translateX(100%);
+}
+nav .nav-active {
+  height: 100vh;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  transform: translateX(0);
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  background-color: #FFF2F2;
+  z-index: 1000;
+}
+nav .burger-icon {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+nav .nav-desktop {
+  display: none;
+}
+nav .burger-icon,
+nav .nav-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.header .header-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-image: url(../img/macaroons-small.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+.header .header-text {
+  color: #FFF2F2;
+  z-index: 10;
+}
+.header .header-bc {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.header .fa-solid {
+  color: #5c2e85;
+}
+
+@media (min-width: 768px) {
+  nav .burger-icon,
+  nav .nav-mobile {
+    display: none;
+  }
+  nav .nav-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  nav .nav-desktop a:hover {
+    color: #f40488;
+  }
+  .header-heading {
+    background-image: url(../img/macaroons-big.jpg);
+  }
+}/*# sourceMappingURL=main.css.map */
